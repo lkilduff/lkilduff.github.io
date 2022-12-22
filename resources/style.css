@@ -1,0 +1,48 @@
+* {
+    font-family: Arial;
+    background-color: #FFFFFF;
+    }
+
+a {
+  text-decoration: none;
+  color: #000000;
+}
+
+h1 {
+  margin: 0 auto;
+}
+
+#note {
+  font-size: 10px;
+  width: 35%;
+}
+
+#map {
+  float:left;
+}
+
+charts {
+  display: inline-block;
+}
+
+button {
+  background-color: #084081;
+  border: 1px solid #084081;
+  color: white;
+  padding: 7.5px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+#mortgageButton {
+  background-color: white;
+  border: 1px solid #084081;
+  color: black;
+  padding: 7.5px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
