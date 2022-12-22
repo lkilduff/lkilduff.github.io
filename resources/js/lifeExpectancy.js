@@ -9,7 +9,7 @@ function getData() {
     for (i = 0; i < lifeData.length; i++) {
         processedArray.push(lifeData[i].ex);
         j++;
-        if (j % 60 === 0){
+        if (j % 61 === 0){
             if (lifeData[i].Abbreviation === "CT")
             {
                 processedData.push({name: lifeData[i].State, data: processedArray, color: '#0276c3', zIndex:1})
