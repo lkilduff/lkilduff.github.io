@@ -42,7 +42,7 @@ Highcharts.chart('line', {
             text: 'Life Expectancy at Birth (years)'
         },
         min: 65,
-        max: 82
+        max: 83
     },
 
     xAxis: {
