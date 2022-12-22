@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<meta charset="UTF-8">
+
+  <head>
+    <title>Life Expectancy</title>
+    <link rel="stylesheet" type="text/css" href="http://lkilduff.github.io/resources/censusmap.css">
+  </head>
+
+  <body>
+    <charts>
+        <div id="map" style="width:400px; height:400px;"></div>
+        <div id="line" style="width:400px; height:400px;"></div>
+        <p id="note">
+          Note: Liberal policy scores are calculated based on 135 policies classified as either liberal or conservative. A liberal policy is defined as expanding state power for economic regulation and redistribution or for protecting marginalized groups, or restricting state power for punishing deviant social behavior; a conservative policy is defined as the opposite. For example, legalization of medical marijuana is categorized as a liberal policy, and a gay marriage ban is categorized as a conservative policy. In the map, states that shifted towards more liberal policies are shaded blue. States that shifted towards more conservative policies are shaded green.
+          <br><br>Reproduced from: Montez, J.K., Beckfield, J., Cooney, J.K., Grumbach, J.M., Hayward, M.D., Koytak, H.Z., Woolf, S.H. and Zajacova, A. (2020), US State Policies, Politics, and Life Expectancy. <i>The Milbank Quarterly</i>, 98: 668-699. <a href="https://doi.org/10.1111/1468-0009.12469" target="_blank">https://doi.org/10.1111/1468-0009.12469</a>
+          <br><br>Data Sources: Human Mortality Database. University of California, Berkeley (USA), and Max Planck Institute for Demographic Research (Germany). Available at www.mortality.org or www.humanmortality.de (data downloaded on [August 20, 2021]).
+          <br>Grumbach, Jacob, 2018, "Vol. 16(2): Replication Data for: From Backwaters to Major Policymakers: Policy Polarization in the States, 1970-2014", <a href="https://doi.org/10.7910/DVN/TZTW1J" target="_blank">https://doi.org/10.7910/DVN/TZTW1J</a>, Harvard Dataverse, V1, UNF:6:mijEpTO29i8c9R8PIxZwfA==[fileUNF].
+        </p>
+    </charts>
+        <script src="https://code.highcharts.com/maps/highmaps.js"></script>
+        <script src="https://code.highcharts.com/maps/modules/data.js"></script>
+        <script src="https://code.highcharts.com/maps/modules/drilldown.js"></script>
+        <script src="https://code.highcharts.com/maps/modules/exporting.js"></script>
+        <script src="https://code.highcharts.com/maps/modules/offline-exporting.js"></script>
+        <script src="https://code.highcharts.com/stock/modules/export-data.js"></script>
+        <script src="https://code.highcharts.com/mapdata/countries/us/us-all.js"></script>
+        <script src="https:/lkilduff.github.io/resources/js/datalib.min.js"></script>
+        <script src="https://lkilduff.github.io/resources/js/lifeExpectancyMap.js"></script>
+    </body>
+
+</html>
