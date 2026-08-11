@@ -16,13 +16,18 @@
       --ink: #1a1a14;
       --ink-muted: #444430;
       --ink-faint: #888860;
-      --accent: #906F8F;
+      --accent: #6b4d6a;
       --rule: #e0d060;
       --serif: 'Classy Vogue', Georgia, serif;
       --sans: 'Classy Vogue', Georgia, serif;
-      --mono: 'Classy Vogue', Georgia, serif;
+      --mono: 'Worldstar', Georgia, serif;
       --max: 860px;
       --pad: 2rem;
+    }
+
+    @font-face {
+      font-family: 'Worldstar';
+      src: url('fonts/Worldstar.ttf') format('truetype');
     }
 
     @font-face {
@@ -57,7 +62,7 @@
     }
 
     .nav-name {
-      font-family: var(--mono);
+      font-family: 'Classy Vogue', Georgia, serif;
       font-size: 0.75rem;
       font-weight: 600;
       color: var(--ink);
@@ -69,10 +74,7 @@
     .nav-links { display: flex; gap: 2rem; list-style: none; }
 
     .nav-links a {
-      font-family: var(--mono);
-      font-size: 0.75rem;
-      font-weight: bold;
-      color: var(--ink-muted);
+      font-family: 'Classy Vogue', Georgia, serif;
       text-decoration: none;
       letter-spacing: 0.08em;
       text-transform: uppercase;
@@ -317,8 +319,8 @@
     .btn-primary {
       display: inline-block;
       padding: 0.65rem 1.4rem;
-      background: var(--accent);
-      color: #fff;
+      background: #c9a8c8;
+      color: #000;
       text-decoration: none;
       font-family: var(--mono);
       font-size: 0.68rem;
@@ -328,7 +330,7 @@
       transition: background 0.2s;
     }
 
-    .btn-primary:hover { background: #d4b97e; }
+    .btn-primary:hover { background: #b890b7; }
 
     .contact-link {
       display: flex;
@@ -415,7 +417,7 @@
       <p class="section-label">01</p>
       <h2 class="section-title">About</h2>
       <div style="display:grid; grid-template-columns:1fr auto; gap:3rem; align-items:start;">
-        <p style="font-size:1.15rem; line-height:1.85; color:var(--ink-muted); font-weight:400;">I'm a quantitative social scientist with a master's in Demography from UC Berkeley and 7 years of demographic data analysis experience. I specialize in demographic methods, causal inference, and mixed-methods design, and turn large, messy datasets into findings.</p>
+        <p style="font-size:1.15rem; line-height:1.85; color:var(--ink-muted); font-weight:400; font-family:'Worldstar', Georgia, serif;">I'm a quantitative social scientist with a master's in Demography from UC Berkeley and 7 years of demographic data analysis experience. I specialize in demographic methods, causal inference, and mixed-methods design, and turn large, messy datasets into findings.</p>
         <div>
           <img src="photo.jpg" alt="Lillian Kilduff" style="display:block; width:280px; border: 1px solid var(--rule);" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
           <div style="display:none; width:280px; height:280px; background:var(--bg-2); border:1px solid var(--rule); align-items:center; justify-content:center;">
