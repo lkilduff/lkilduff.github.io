@@ -11,6 +11,10 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
+      @font-face {
+      font-family: 'Classy Vogue';
+      src: url('fonts/Classyvogueregular.ttf') format('truetype');
+      }
       --ink: #1a1a2e;
       --ink-muted: #555570;
       --ink-faint: #9999b0;
@@ -51,7 +55,7 @@
     }
 
     .nav-name {
-      font-family: var(--serif);
+      font-family: 'Classy Vogue', Georgia, serif;
       font-size: 1.1rem;
       color: var(--ink);
       text-decoration: none;
@@ -111,7 +115,7 @@
     }
 
     h1 {
-      font-family: var(--serif);
+      font-family: 'Classy Vogue', Georgia, serif;
       font-size: clamp(2.8rem, 5vw, 4.2rem);
       line-height: 1.08;
       color: var(--ink);
