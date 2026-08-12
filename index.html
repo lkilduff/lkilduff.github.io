@@ -59,7 +59,7 @@
       z-index: 100;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
       padding: 1.1rem var(--pad);
       background: rgba(255,238,140,0.95);
       backdrop-filter: blur(10px);
@@ -76,9 +76,47 @@
       text-transform: uppercase;
     }
 
-    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .hamburger {
+      position: absolute;
+      right: var(--pad);
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      padding: 4px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: #0000CD;
+    }
+
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      left: 0;
+      background: rgba(255,238,140,0.98);
+      border-bottom: 1px solid var(--rule);
+      list-style: none;
+      padding: 0.5rem 0;
+    }
+
+    .nav-links.open { display: flex; }
+
+    .nav-links li { border-top: 1px solid var(--rule); }
 
     .nav-links a {
+      display: block;
+      padding: 0.9rem var(--pad);
       font-family: 'Classy Vogue', Georgia, serif;
       color: #0000CD;
       text-decoration: none;
@@ -387,8 +425,7 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 680px) {
-      nav { padding: 0.75rem 1.25rem; flex-direction: column; align-items: flex-start; gap: 0.6rem; }
-      .nav-links { gap: 1rem; flex-wrap: wrap; }
+      nav { padding: 0.85rem var(--pad); }
       .section { padding: 3rem 1.25rem; }
       .about-grid { grid-template-columns: 1fr; gap: 2rem; }
       .card-grid { grid-template-columns: 1fr; }
@@ -408,12 +445,15 @@
 
   <nav>
     <a href="#" class="nav-name">Lillian Kilduff</a>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#publications">Publications</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#vizs">Data Viz</a></li>
-      <li><a href="#contact">Contact</a></li>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-menu">
+      <li><a href="#about" onclick="closeMenu()">About</a></li>
+      <li><a href="#publications" onclick="closeMenu()">Publications</a></li>
+      <li><a href="#projects" onclick="closeMenu()">Projects</a></li>
+      <li><a href="#vizs" onclick="closeMenu()">Data Viz</a></li>
+      <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
     </ul>
   </nav>
 
@@ -613,5 +653,16 @@
     <span>Los Angeles, CA · 2026</span>
   </footer>
 
+  <script>
+    function toggleMenu() {
+      document.getElementById('nav-menu').classList.toggle('open');
+    }
+    function closeMenu() {
+      document.getElementById('nav-menu').classList.remove('open');
+    }
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('nav')) closeMenu();
+    });
+  </script>
 </body>
 </html>
