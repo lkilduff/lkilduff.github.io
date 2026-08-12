@@ -455,20 +455,14 @@
   <div class="nav-spacer"></div>
 
   <!-- ABOUT -->
-  <div id="about">
-    <div class="section">
-      
-      <p class="section-label">01</p>
-      <h2 class="section-title">About</h2>
-      <div class="about-bio-grid" style="display:grid; grid-template-columns:1fr auto; gap:3rem; align-items:start;">
-        <p style="font-size:1.15rem; line-height:1.85; color:var(--ink); font-weight:bold; font-family:'AlteHaasGrotesk', sans-serif;">I'm a quantitative social scientist with a master's in Demography from UC Berkeley and 7 years of demographic data analysis experience. I specialize in demographic methods, causal inference, and mixed-methods design, and turn large, messy datasets into findings.</p>
-        <div>
-          <img src="photo.jpeg" alt="Lillian Kilduff" style="display:block; width:280px; border: 1px solid var(--rule);" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-          <div style="display:none; width:280px; height:280px; background:var(--bg-2); border:1px solid var(--rule); align-items:center; justify-content:center;">
-            <span style="font-family:var(--mono); font-size:0.72rem; color:var(--ink-faint); text-transform:uppercase; letter-spacing:0.1em;">Add photo.jpg</span>
-          </div>
-        </div>
+  <div id="about" style="background:var(--bg); padding:0; border-bottom:1px solid var(--rule);">
+    <div style="max-width:var(--max); margin:0 auto; padding:3rem 2rem; display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:end; min-height:420px;">
+      <!-- Left: photo anchored to bottom -->
+      <div style="display:flex; align-items:flex-end;">
+        <img src="photo.jpeg" alt="Lillian Kilduff" style="display:block; width:240px;" onerror="this.style.display:'none';" />
       </div>
+      <!-- Right: large bio text -->
+      <p style="font-family:'AlteHaasGrotesk', sans-serif; font-size:1.25rem; line-height:1.75; color:#0000CD; font-weight:bold; align-self:start; padding-top:0.5rem;">I'm a quantitative social scientist with a master's in Demography from UC Berkeley and 7 years of demographic data analysis experience. I specialize in demographic methods, causal inference, and mixed-methods design, and turn large, messy datasets into findings.</p>
     </div>
   </div>
 
