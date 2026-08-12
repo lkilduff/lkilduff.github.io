@@ -4,9 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lillian Kilduff — Demographer</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -18,8 +16,8 @@
       --ink-faint: #888860;
       --accent: #0000CD;
       --rule: #e0d060;
-      --serif: 'Classy Vogue', Georgia, serif;
-      --sans: 'Classy Vogue', Georgia, serif;
+      --serif: 'AlteHaasGrotesk', sans-serif;
+      --sans: 'AlteHaasGrotesk', sans-serif;
       --mono: 'AlteHaasGrotesk', sans-serif;
       --max: 860px;
       --pad: 2rem;
@@ -31,11 +29,6 @@
     }
 
     @font-face {
-      font-family: 'Scaver';
-      src: url('fonts/Scaver-Medium.ttf') format('truetype');
-    }
-
-    @font-face {
       font-family: 'Classy Vogue';
       src: url('fonts/Classyvogueregular.ttf') format('truetype');
     }
@@ -43,8 +36,7 @@
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: 'Classy Vogue', Georgia, serif;
-      font-weight: bold;
+      font-family: 'AlteHaasGrotesk', sans-serif;
       background: var(--bg);
       color: var(--ink);
       font-size: 18px;
@@ -67,9 +59,9 @@
     }
 
     .nav-name {
-      font-family: 'Classy Vogue', Georgia, serif;
-      font-size: 1.6rem;
-      font-weight: 600;
+      font-family: 'AlteHaasGrotesk', sans-serif;
+      font-size: 2.2rem;
+      font-weight: bold;
       color: #0000CD;
       text-decoration: none;
       letter-spacing: 0.08em;
@@ -117,7 +109,7 @@
     .nav-links a {
       display: block;
       padding: 0.9rem var(--pad);
-      font-family: 'Classy Vogue', Georgia, serif;
+      font-family: 'AlteHaasGrotesk', sans-serif;
       color: #0000CD;
       text-decoration: none;
       letter-spacing: 0.08em;
@@ -149,7 +141,7 @@
       font-family: var(--serif);
       font-size: clamp(1.6rem, 3vw, 2.2rem);
       font-weight: bold;
-      color: var(--ink);
+      color: #0000CD;
       line-height: 1.15;
       margin-bottom: 2.5rem;
       padding-bottom: 1.5rem;
@@ -436,6 +428,9 @@
       .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
       footer { flex-direction: column; gap: 0.5rem; }
       .nav-spacer { height: 90px; }
+      .about-bio-grid { grid-template-columns: 1fr !important; }
+      .about-bio-grid p { font-size: 0.95rem !important; line-height: 1.6 !important; }
+      .about-bio-grid img { width: 100% !important; max-width: 100% !important; }
     }
 
     @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
@@ -465,8 +460,8 @@
       
       <p class="section-label">01</p>
       <h2 class="section-title">About</h2>
-      <div style="display:grid; grid-template-columns:1fr auto; gap:3rem; align-items:start;">
-        <p style="font-size:1.15rem; line-height:1.85; color:var(--ink-muted); font-weight:400; font-family:'AlteHaasGrotesk', sans-serif;">I'm a quantitative social scientist with a master's in Demography from UC Berkeley and 7 years of demographic data analysis experience. I specialize in demographic methods, causal inference, and mixed-methods design, and turn large, messy datasets into findings.</p>
+      <div class="about-bio-grid" style="display:grid; grid-template-columns:1fr auto; gap:3rem; align-items:start;">
+        <p style="font-size:1.15rem; line-height:1.85; color:var(--ink); font-weight:bold; font-family:'AlteHaasGrotesk', sans-serif;">I'm a quantitative social scientist with a master's in Demography from UC Berkeley and 7 years of demographic data analysis experience. I specialize in demographic methods, causal inference, and mixed-methods design, and turn large, messy datasets into findings.</p>
         <div>
           <img src="photo.jpeg" alt="Lillian Kilduff" style="display:block; width:280px; border: 1px solid var(--rule);" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
           <div style="display:none; width:280px; height:280px; background:var(--bg-2); border:1px solid var(--rule); align-items:center; justify-content:center;">
