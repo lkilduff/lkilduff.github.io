@@ -151,7 +151,40 @@
     /* ── SPACER for fixed nav ── */
     .nav-spacer { height: 57px; }
 
-    /* ── ABOUT ── */
+    /* ── ABOUT SECTION ── */
+    .about-section-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 3rem 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: end;
+      min-height: 420px;
+    }
+
+    .about-photo-wrap { display: flex; align-items: flex-end; }
+    .about-photo { display: block; width: 240px; }
+
+    .about-bio-text {
+      font-family: 'AlteHaasGrotesk', sans-serif;
+      font-size: 1.25rem;
+      line-height: 1.75;
+      color: #0000CD;
+      font-weight: bold;
+      align-self: start;
+      padding-top: 0.5rem;
+    }
+
+    @media (max-width: 680px) {
+      .about-section-inner {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        gap: 2rem;
+      }
+      .about-photo { width: 100%; max-width: 100%; }
+      .about-bio-text { font-size: 1rem; }
+    }
     .about-grid {
       display: grid;
       grid-template-columns: 1fr 1.8fr;
@@ -456,13 +489,13 @@
 
   <!-- ABOUT -->
   <div id="about" style="background:var(--bg); padding:0; border-bottom:1px solid var(--rule);">
-    <div style="max-width:var(--max); margin:0 auto; padding:3rem 2rem; display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:end; min-height:420px;">
+    <div class="about-section-inner">
       <!-- Left: photo anchored to bottom -->
-      <div style="display:flex; align-items:flex-end;">
-        <img src="photo.jpeg" alt="Lillian Kilduff" style="display:block; width:240px;" onerror="this.style.display:'none';" />
+      <div class="about-photo-wrap">
+        <img src="photo.jpeg" alt="Lillian Kilduff" class="about-photo" onerror="this.style.display='none';" />
       </div>
       <!-- Right: large bio text -->
-      <p style="font-family:'AlteHaasGrotesk', sans-serif; font-size:1.25rem; line-height:1.75; color:#0000CD; font-weight:bold; align-self:start; padding-top:0.5rem;">I'm a quantitative social scientist with a master's in Demography from UC Berkeley and 7 years of demographic data analysis experience. I specialize in demographic methods, causal inference, and mixed-methods design, and turn large, messy datasets into findings.</p>
+      <p class="about-bio-text">I'm a quantitative social scientist with a master's in Demography from UC Berkeley and 7 years of demographic data analysis experience. I specialize in demographic methods, causal inference, and mixed-methods design, and turn large, messy datasets into findings.</p>
     </div>
   </div>
 
