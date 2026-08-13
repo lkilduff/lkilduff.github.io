@@ -182,8 +182,9 @@
         min-height: auto;
         gap: 2rem;
       }
+      .about-photo-wrap { order: 2; }
+      .about-bio-text { order: 1; font-size: 1rem; }
       .about-photo { width: 100%; max-width: 100%; }
-      .about-bio-text { font-size: 1rem; }
     }
     .about-grid {
       display: grid;
@@ -269,7 +270,93 @@
       text-align: right;
     }
 
-    /* ── PROJECTS & DATA VIZS ── */
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #0000CD;
+      color: #fff;
+      border: none;
+      width: 36px;
+      height: 36px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+
+    .carousel-btn:hover { background: #0000a0; }
+    .carousel-btn-left { left: -18px; }
+    .carousel-btn-right { right: -18px; }
+
+    @media (max-width: 680px) {
+      .carousel-btn { position: static; transform: none; top: auto; }
+      .carousel-btn-left { left: auto; }
+      .carousel-btn-right { right: auto; }
+      [style*="position:relative"] { padding-bottom: 0; }
+      div:has(> .pub-carousel) {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+      .carousel-btn-left { order: 2; }
+      .pub-carousel { order: 1; }
+      .carousel-btn-right { order: 3; }
+      .carousel-btn-left, .carousel-btn-right {
+        width: 100%;
+        height: 40px;
+      }
+    }
+
+    /* ── PUB CAROUSEL ── */
+    .pub-carousel {
+      display: flex;
+      gap: 1.25rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 1rem;
+      scrollbar-width: none;
+    }
+
+    .pub-carousel::-webkit-scrollbar { display: none; }
+
+    .pub-card {
+      flex: 0 0 260px;
+      scroll-snap-align: start;
+      border: 1px solid var(--rule);
+      padding: 1.5rem;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      transition: border-color 0.2s;
+    }
+
+    .pub-card:hover { border-color: #0000CD; }
+
+    .pub-card-venue {
+      font-family: 'AlteHaasGrotesk', sans-serif;
+      font-size: 0.65rem;
+      color: #0000CD;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: bold;
+    }
+
+    .pub-card-title {
+      font-family: 'AlteHaasGrotesk', sans-serif;
+      font-size: 0.92rem;
+      color: var(--ink);
+      font-weight: bold;
+      line-height: 1.5;
+    }
+
+    /* ── PUB ITEM (keep for fallback) ── */
     .card-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -490,161 +577,152 @@
   <!-- ABOUT -->
   <div id="about" style="background:var(--bg); padding:0; border-bottom:1px solid var(--rule);">
     <div class="about-section-inner">
-      <!-- Left: photo anchored to bottom -->
+      <!-- Left: bio text -->
+      <p class="about-bio-text">I'm a quantitative social scientist with a master's in Demography from UC Berkeley and 7 years of demographic data analysis experience. I specialize in demographic methods, causal inference, and mixed-methods design, and turn large, messy datasets into findings.</p>
+      <!-- Right: photo anchored to bottom -->
       <div class="about-photo-wrap">
         <img src="photo.jpeg" alt="Lillian Kilduff" class="about-photo" onerror="this.style.display='none';" />
       </div>
-      <!-- Right: large bio text -->
-      <p class="about-bio-text">I'm a quantitative social scientist with a master's in Demography from UC Berkeley and 7 years of demographic data analysis experience. I specialize in demographic methods, causal inference, and mixed-methods design, and turn large, messy datasets into findings.</p>
     </div>
   </div>
 
   <!-- PUBLICATIONS -->
   <div id="publications">
     <div class="section">
-      
       <h2 class="section-title">Publications & Presentations</h2>
-
-      <a href="https://www.prb.org/resources/liberal-u-s-state-policies-linked-to-longer-lives/" class="pub-item" target="_blank" rel="noopener">
-        <span class="pub-year">2023</span>
-        <span class="pub-title">Life Expectancy Is Increasingly Tied to a State's Policy Leanings</span>
-        <span class="pub-venue">PRB</span>
-      </a>
-      <a href="https://www.prb.org/resources/the-best-years-of-their-lives-young-adults-reported-more-anxiety-than-older-adults-during-pandemic-despite-lower-health-risks/" class="pub-item" target="_blank" rel="noopener">
-        <span class="pub-year">2023</span>
-        <span class="pub-title">Young Adults Reported More Anxiety Than Older Adults During Pandemic</span>
-        <span class="pub-venue">PRB</span>
-      </a>
-      <a href="#" class="pub-item">
-        <span class="pub-year">2023</span>
-        <span class="pub-title">Developing a New Demographic Risk Index — SDA Annual Meeting, San Antonio</span>
-        <span class="pub-venue">Presenter</span>
-      </a>
-      <a href="#" class="pub-item">
-        <span class="pub-year">2022</span>
-        <span class="pub-title">The Role of Changing Age Structure in California's Rising Housing Demand — SDA Annual Meeting</span>
-        <span class="pub-venue">Presenter</span>
-      </a>
-      <a href="https://www.prb.org/resources/how-poverty-in-the-united-states-is-measured-and-why-it-matters/" class="pub-item" target="_blank" rel="noopener">
-        <span class="pub-year">2022</span>
-        <span class="pub-title">How Poverty in the United States Is Measured and Why It Matters</span>
-        <span class="pub-venue">PRB</span>
-      </a>
-      <a href="https://www.prb.org/resources/which-us-states-are-the-oldest/" class="pub-item" target="_blank" rel="noopener">
-        <span class="pub-year">2021</span>
-        <span class="pub-title">Which U.S. States Have the Oldest Populations?</span>
-        <span class="pub-venue">PRB</span>
-      </a>
-      <a href="https://www.prb.org/resources/disasters-raise-risk-of-a-homeless-undercount-in-2020-census/" class="pub-item" target="_blank" rel="noopener">
-        <span class="pub-year">2020</span>
-        <span class="pub-title">Disasters Raise Risk of a Homeless Undercount in 2020 Census</span>
-        <span class="pub-venue">PRB</span>
-      </a>
-      <a href="https://www.prb.org/resources/u-s-population-is-growing-older/" class="pub-item" target="_blank" rel="noopener">
-        <span class="pub-year">2020</span>
-        <span class="pub-title">The U.S. Population Is Growing Older, and the Gender Gap in Life Expectancy Is Narrowing</span>
-        <span class="pub-venue">PRB</span>
-      </a>
-      <a href="#" class="pub-item">
-        <span class="pub-year">2020–21</span>
-        <span class="pub-title">Acknowledged Contributor, 12+ Understanding and Using ACS Data Handbooks</span>
-        <span class="pub-venue">Census Bureau</span>
-      </a>
+      <div style="position:relative;">
+        <button class="carousel-btn carousel-btn-left" onclick="scrollCarousel('pub-carousel', -1)">&#8592;</button>
+        <div class="pub-carousel" id="pub-carousel">
+        <a href="https://www.prb.org/resources/which-us-states-are-the-oldest/" class="pub-card" target="_blank" rel="noopener">
+          <div class="pub-card-venue">PRB</div>
+          <div class="pub-card-title">Which U.S. States Have the Oldest Populations?</div>
+        </a>
+        <a href="https://www.prb.org/resources/liberal-u-s-state-policies-linked-to-longer-lives/" class="pub-card" target="_blank" rel="noopener">
+          <div class="pub-card-venue">PRB</div>
+          <div class="pub-card-title">Life Expectancy Is Increasingly Tied to a State's Policy Leanings</div>
+        </a>
+        <a href="https://www.prb.org/resources/the-best-years-of-their-lives-young-adults-reported-more-anxiety-than-older-adults-during-pandemic-despite-lower-health-risks/" class="pub-card" target="_blank" rel="noopener">
+          <div class="pub-card-venue">PRB</div>
+          <div class="pub-card-title">Young Adults Reported More Anxiety Than Older Adults During Pandemic</div>
+        </a>
+        <a href="#" class="pub-card">
+          <div class="pub-card-venue">Presenter</div>
+          <div class="pub-card-title">Developing a New Demographic Risk Index — SDA Annual Meeting, San Antonio</div>
+        </a>
+        <a href="#" class="pub-card">
+          <div class="pub-card-venue">Presenter</div>
+          <div class="pub-card-title">The Role of Changing Age Structure in California's Rising Housing Demand — SDA Annual Meeting</div>
+        </a>
+        <a href="https://www.prb.org/resources/how-poverty-in-the-united-states-is-measured-and-why-it-matters/" class="pub-card" target="_blank" rel="noopener">
+          <div class="pub-card-venue">PRB</div>
+          <div class="pub-card-title">How Poverty in the United States Is Measured and Why It Matters</div>
+        </a>
+        <a href="https://www.prb.org/resources/disasters-raise-risk-of-a-homeless-undercount-in-2020-census/" class="pub-card" target="_blank" rel="noopener">
+          <div class="pub-card-venue">PRB</div>
+          <div class="pub-card-title">Disasters Raise Risk of a Homeless Undercount in 2020 Census</div>
+        </a>
+        <a href="https://www.prb.org/resources/u-s-population-is-growing-older/" class="pub-card" target="_blank" rel="noopener">
+          <div class="pub-card-venue">PRB</div>
+          <div class="pub-card-title">The U.S. Population Is Growing Older, and the Gender Gap in Life Expectancy Is Narrowing</div>
+        </a>
+        <a href="#" class="pub-card">
+          <div class="pub-card-venue">Census Bureau</div>
+          <div class="pub-card-title">Acknowledged Contributor, 12+ Understanding and Using ACS Data Handbooks</div>
+        </a>
+      </div>
+        <button class="carousel-btn carousel-btn-right" onclick="scrollCarousel('pub-carousel', 1)">&#8594;</button>
+      </div>
     </div>
   </div>
 
   <!-- PROJECTS -->
   <div id="projects">
     <div class="section">
-      
       <p class="section-label">03</p>
       <h2 class="section-title">Projects</h2>
-      <div class="card-grid">
-
-        <a href="#" class="card">
-          <div class="card-placeholder"><span>Image placeholder</span></div>
-          <div class="card-body">
-            <div class="card-type">Migration analysis</div>
-            <div class="card-title">Project title here</div>
-            <p class="card-desc">Brief description of the project, methods used, and key finding.</p>
-          </div>
-        </a>
-
-        <a href="#" class="card">
-          <div class="card-placeholder"><span>Image placeholder</span></div>
-          <div class="card-body">
-            <div class="card-type">Enrollment projection</div>
-            <div class="card-title">Project title here</div>
-            <p class="card-desc">Brief description of the project, methods used, and key finding.</p>
-          </div>
-        </a>
-
-        <a href="#" class="card">
-          <div class="card-placeholder"><span>Image placeholder</span></div>
-          <div class="card-body">
-            <div class="card-type">Health disparities</div>
-            <div class="card-title">Project title here</div>
-            <p class="card-desc">Brief description of the project, methods used, and key finding.</p>
-          </div>
-        </a>
-
-        <a href="#" class="card">
-          <div class="card-placeholder"><span>Image placeholder</span></div>
-          <div class="card-body">
-            <div class="card-type">Mortality research</div>
-            <div class="card-title">Project title here</div>
-            <p class="card-desc">Brief description of the project, methods used, and key finding.</p>
-          </div>
-        </a>
-
+      <div style="position:relative;">
+        <button class="carousel-btn carousel-btn-left" onclick="scrollCarousel('proj-carousel', -1)">&#8592;</button>
+        <div class="pub-carousel" id="proj-carousel">
+          <a href="#" class="card" style="flex:0 0 280px;">
+            <div class="card-placeholder"><span>Image placeholder</span></div>
+            <div class="card-body">
+              <div class="card-type">Migration analysis</div>
+              <div class="card-title">Project title here</div>
+              <p class="card-desc">Brief description of the project, methods used, and key finding.</p>
+            </div>
+          </a>
+          <a href="#" class="card" style="flex:0 0 280px;">
+            <div class="card-placeholder"><span>Image placeholder</span></div>
+            <div class="card-body">
+              <div class="card-type">Enrollment projection</div>
+              <div class="card-title">Project title here</div>
+              <p class="card-desc">Brief description of the project, methods used, and key finding.</p>
+            </div>
+          </a>
+          <a href="#" class="card" style="flex:0 0 280px;">
+            <div class="card-placeholder"><span>Image placeholder</span></div>
+            <div class="card-body">
+              <div class="card-type">Health disparities</div>
+              <div class="card-title">Project title here</div>
+              <p class="card-desc">Brief description of the project, methods used, and key finding.</p>
+            </div>
+          </a>
+          <a href="#" class="card" style="flex:0 0 280px;">
+            <div class="card-placeholder"><span>Image placeholder</span></div>
+            <div class="card-body">
+              <div class="card-type">Mortality research</div>
+              <div class="card-title">Project title here</div>
+              <p class="card-desc">Brief description of the project, methods used, and key finding.</p>
+            </div>
+          </a>
+        </div>
+        <button class="carousel-btn carousel-btn-right" onclick="scrollCarousel('proj-carousel', 1)">&#8594;</button>
       </div>
     </div>
   </div>
 
-  <!-- DATA VIZS -->
+  <!-- DATA VIZ -->
   <div id="vizs">
     <div class="section">
-      
       <p class="section-label">04</p>
       <h2 class="section-title">Data Viz</h2>
-      <div class="card-grid">
-
-        <a href="#" class="card">
-          <div class="card-placeholder" style="aspect-ratio:4/3;"><span>Viz placeholder</span></div>
-          <div class="card-body">
-            <div class="card-type">Interactive</div>
-            <div class="card-title">Visualization title here</div>
-            <p class="card-desc">What this visualization shows and the data source.</p>
-          </div>
-        </a>
-
-        <a href="#" class="card">
-          <div class="card-placeholder" style="aspect-ratio:4/3;"><span>Viz placeholder</span></div>
-          <div class="card-body">
-            <div class="card-type">Chart</div>
-            <div class="card-title">Visualization title here</div>
-            <p class="card-desc">What this visualization shows and the data source.</p>
-          </div>
-        </a>
-
-        <a href="#" class="card">
-          <div class="card-placeholder" style="aspect-ratio:4/3;"><span>Viz placeholder</span></div>
-          <div class="card-body">
-            <div class="card-type">Map</div>
-            <div class="card-title">Visualization title here</div>
-            <p class="card-desc">What this visualization shows and the data source.</p>
-          </div>
-        </a>
-
-        <a href="#" class="card">
-          <div class="card-placeholder" style="aspect-ratio:4/3;"><span>Viz placeholder</span></div>
-          <div class="card-body">
-            <div class="card-type">Population pyramid</div>
-            <div class="card-title">Visualization title here</div>
-            <p class="card-desc">What this visualization shows and the data source.</p>
-          </div>
-        </a>
-
+      <div style="position:relative;">
+        <button class="carousel-btn carousel-btn-left" onclick="scrollCarousel('viz-carousel', -1)">&#8592;</button>
+        <div class="pub-carousel" id="viz-carousel">
+          <a href="#" class="card" style="flex:0 0 280px;">
+            <div class="card-placeholder" style="aspect-ratio:4/3;"><span>Viz placeholder</span></div>
+            <div class="card-body">
+              <div class="card-type">Interactive</div>
+              <div class="card-title">Visualization title here</div>
+              <p class="card-desc">What this visualization shows and the data source.</p>
+            </div>
+          </a>
+          <a href="#" class="card" style="flex:0 0 280px;">
+            <div class="card-placeholder" style="aspect-ratio:4/3;"><span>Viz placeholder</span></div>
+            <div class="card-body">
+              <div class="card-type">Chart</div>
+              <div class="card-title">Visualization title here</div>
+              <p class="card-desc">What this visualization shows and the data source.</p>
+            </div>
+          </a>
+          <a href="#" class="card" style="flex:0 0 280px;">
+            <div class="card-placeholder" style="aspect-ratio:4/3;"><span>Viz placeholder</span></div>
+            <div class="card-body">
+              <div class="card-type">Map</div>
+              <div class="card-title">Visualization title here</div>
+              <p class="card-desc">What this visualization shows and the data source.</p>
+            </div>
+          </a>
+          <a href="#" class="card" style="flex:0 0 280px;">
+            <div class="card-placeholder" style="aspect-ratio:4/3;"><span>Viz placeholder</span></div>
+            <div class="card-body">
+              <div class="card-type">Population pyramid</div>
+              <div class="card-title">Visualization title here</div>
+              <p class="card-desc">What this visualization shows and the data source.</p>
+            </div>
+          </a>
+        </div>
+        <button class="carousel-btn carousel-btn-right" onclick="scrollCarousel('viz-carousel', 1)">&#8594;</button>
       </div>
     </div>
   </div>
@@ -676,6 +754,10 @@
   </footer>
 
   <script>
+    function scrollCarousel(id, dir) {
+      const el = document.getElementById(id);
+      el.scrollBy({ left: dir * 300, behavior: 'smooth' });
+    }
     function toggleMenu() {
       document.getElementById('nav-menu').classList.toggle('open');
     }
