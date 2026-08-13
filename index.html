@@ -220,17 +220,16 @@
 
     .hero-big {
       font-family: 'AlteHaasGrotesk', sans-serif;
-      font-size: clamp(4rem, 13vw, 11rem);
+      font-size: clamp(2.5rem, 7vw, 6rem);
       font-weight: bold;
       line-height: 0.9;
-      
+      white-space: nowrap;
       letter-spacing: -0.02em;
       color: var(--ink);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
-      gap: 0.5rem;
+      gap: 1rem;
     }
 
     .hero-big .plus {
@@ -294,26 +293,24 @@
       border-right: 2px solid var(--ink);
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      gap: 2rem;
+      gap: 1rem;
     }
 
     .hero-right {
       display: flex;
-      align-items: stretch;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      background: rgba(0,0,0,0.02);
     }
 
     .hero-headshot {
-      width: 100%;
-      height: 100%;
+      width: 220px;
+      height: 280px;
       object-fit: cover;
+      object-position: top;
       display: block;
-      min-height: 400px;
-    }
-
-    .hero-about {
-      border-top: 1px solid var(--rule);
-      padding-top: 1.5rem;
+      border: 2px solid var(--ink);
     }
 
     .hero-about-heading {
@@ -322,12 +319,12 @@
       font-weight: bold;
       color: var(--blue);
       letter-spacing: 0.1em;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.5rem;
     }
 
     .hero-about-text {
       font-family: 'AlteHaasGrotesk', sans-serif;
-      font-size: 1rem;
+      font-size: 0.95rem;
       line-height: 1.75;
       color: var(--ink);
       font-weight: bold;
@@ -576,20 +573,20 @@
         <span>UC Berkeley</span><span>///////////</span>
       </div>
     </div>
-    <div class="hero-split">
-      <!-- Left: big text + about -->
-      <div class="hero-left">
-        <div class="hero-big">
-          <span>Population</span>
-          <span class="plus">✦</span>
-          <span>Data</span>
-        </div>
-        <div class="hero-about">
-          <h2 class="hero-about-heading">About</h2>
-          <p class="hero-about-text">I'm a quantitative social scientist with a master's in Demography from UC Berkeley and 7 years of demographic data analysis experience. I specialize in demographic methods, causal inference, and mixed-methods design, and turn large, messy datasets into findings.</p>
-        </div>
+    <!-- Big text full width -->
+    <div class="hero-text" style="padding:1.5rem 2rem; border-bottom:2px solid var(--ink);">
+      <div class="hero-big">
+        <span>Population</span>
+        <span class="plus">✦</span>
+        <span>Data</span>
       </div>
-      <!-- Right: headshot -->
+    </div>
+    <!-- Split: about text left, photo right -->
+    <div class="hero-split">
+      <div class="hero-left">
+        <h2 class="hero-about-heading">About</h2>
+        <p class="hero-about-text">I'm a quantitative social scientist with a master's in Demography from UC Berkeley and 7 years of demographic data analysis experience. I specialize in demographic methods, causal inference, and mixed-methods design, and turn large, messy datasets into findings.</p>
+      </div>
       <div class="hero-right">
         <img src="photo.jpeg" alt="Lillian Kilduff" class="hero-headshot" onerror="this.style.display='none';" />
       </div>
