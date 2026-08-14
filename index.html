@@ -511,10 +511,11 @@
     }
 
     @media (max-width: 680px) {
+      .hero-big { font-size: clamp(1.8rem, 8vw, 3rem); white-space: normal; }
       .hero-split { grid-template-columns: 1fr; }
       .hero-left { border-right: none; border-bottom: 2px solid var(--ink); }
-      .hero-headshot { min-height: 300px; }
-      .hero-big { font-size: clamp(3rem, 16vw, 6rem); }
+      .hero-right { justify-content: center; padding: 1.5rem; }
+      .hero-headshot { width: 160px; height: 200px; }
       .carousel-btn { display: none; }
       footer { flex-direction: column; gap: 0.4rem; }
     }
