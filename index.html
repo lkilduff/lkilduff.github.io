@@ -301,7 +301,6 @@
       display: flex;
       align-items: stretch;
       overflow: hidden;
-      max-height: 400px;
     }
 
     .hero-headshot {
@@ -314,19 +313,18 @@
 
     .hero-about-text {
       font-family: 'AlteHaasGrotesk', sans-serif;
-      font-size: clamp(1.4rem, 3vw, 2.6rem);
-      line-height: 1.45;
+      font-size: clamp(1rem, 1.4vw, 1.4rem);
+      line-height: 1.6;
       color: var(--ink);
       font-weight: bold;
     }
 
     .hero-about-heading {
       font-family: 'AlteHaasGrotesk', sans-serif;
-      font-size: 0.7rem;
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
       font-weight: bold;
-      color: var(--blue);
-      letter-spacing: 0.1em;
-      margin-bottom: 0.5rem;
+      color: var(--ink);
+      margin-bottom: 1rem;
     }
 
     /* ── CAROUSEL ── */
@@ -503,10 +501,51 @@
     }
 
     /* ── RESPONSIVE ── */
+    /* ── MOBILE HAMBURGER ── */
+    .mobile-hamburger { display: none; }
+    .mobile-nav-links { display: none; }
+
     @media (max-width: 768px) {
       nav { grid-template-columns: 1fr auto; }
       .nav-links { display: none; }
       .nav-right { display: none; }
+      .mobile-hamburger {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        padding: 0.5rem;
+        background: none;
+        border: none;
+        cursor: pointer;
+      }
+      .mobile-hamburger span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background: var(--ink);
+      }
+      .mobile-nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0; right: 0;
+        background: rgba(245,225,112,0.98);
+        border-bottom: 2px solid var(--ink);
+        list-style: none;
+        flex-direction: column;
+        z-index: 200;
+      }
+      .mobile-nav-links.open { display: flex; }
+      .mobile-nav-links li { border-top: 1px solid var(--rule); }
+      .mobile-nav-links a {
+        display: block;
+        padding: 1rem 1.5rem;
+        font-family: 'AlteHaasGrotesk', sans-serif;
+        font-size: 1rem;
+        font-weight: bold;
+        color: var(--ink);
+        text-decoration: none;
+      }
+      .mobile-nav-links a:hover { background: rgba(0,0,0,0.05); }
     }
 
     @media (max-width: 680px) {
@@ -548,6 +587,18 @@
       </div>
       <div class="nav-right-text">Available for work → <a href="mailto:lily.kilduff@gmail.com" class="nav-email-btn">lily.kilduff@gmail.com</a></div>
     </div>
+    <!-- Mobile hamburger -->
+    <button class="mobile-hamburger" onclick="toggleMobileMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="mobile-nav-links" id="mobile-nav-menu">
+      <li><a href="#about" onclick="closeMobileMenu()">About</a></li>
+      <li><a href="#publications" onclick="closeMobileMenu()">Publications</a></li>
+      <li><a href="#projects" onclick="closeMobileMenu()">Projects</a></li>
+      <li><a href="#vizs" onclick="closeMobileMenu()">Data Viz</a></li>
+      <li><a href="resume.html" onclick="closeMobileMenu()">Resume</a></li>
+      <li><a href="mailto:lily.kilduff@gmail.com">Email me</a></li>
+    </ul>
   </nav>
 
   <!-- HERO -->
@@ -704,15 +755,15 @@
       document.getElementById(id).scrollBy({ left: dir * 300, behavior: 'smooth' });
     }
 
-    // Nav
-    function toggleMenu() {
-      document.getElementById('nav-menu').classList.toggle('open');
+    // Mobile nav
+    function toggleMobileMenu() {
+      document.getElementById('mobile-nav-menu').classList.toggle('open');
     }
-    function closeMenu() {
-      document.getElementById('nav-menu').classList.remove('open');
+    function closeMobileMenu() {
+      document.getElementById('mobile-nav-menu').classList.remove('open');
     }
     document.addEventListener('click', function(e) {
-      if (!e.target.closest('nav')) closeMenu();
+      if (!e.target.closest('nav')) closeMobileMenu();
     });
   </script>
 </body>
