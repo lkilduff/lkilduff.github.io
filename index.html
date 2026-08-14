@@ -314,8 +314,8 @@
 
     .hero-about-text {
       font-family: 'AlteHaasGrotesk', sans-serif;
-      font-size: 1.6rem;
-      line-height: 1.65;
+      font-size: 2rem;
+      line-height: 1.55;
       color: var(--ink);
       font-weight: bold;
     }
@@ -521,8 +521,9 @@
       .hero-big { font-size: clamp(1.8rem, 8vw, 3rem); white-space: normal; }
       .hero-split { grid-template-columns: 1fr; }
       .hero-left { border-right: none; border-bottom: 2px solid var(--ink); }
-      .hero-right { justify-content: center; padding: 1.5rem; }
-      .hero-headshot { width: 160px; height: 200px; }
+      .hero-right { max-height: none; padding: 0; justify-content: flex-start; }
+      .hero-headshot { width: 100%; height: auto; max-height: 420px; object-fit: cover; }
+      .hero-about-text { font-size: 1.2rem; }
       .carousel-btn { display: none; }
       footer { flex-direction: column; gap: 0.4rem; }
     }
